@@ -10,6 +10,16 @@ def to_miniscule(S):
 def del_space(S):
     return S.replace(' ','')
 
+
+def clean_string(S):
+    temp = 'abcdefghijklmnopqrstuvwxyz'
+    S_PRIM = ''
+    S = to_miniscule(del_space(S))
+    for c in S:
+        if to_miniscule(c) in temp:
+            S_PRIM += to_miniscule(c)
+    return S_PRIM
+
 def saisire(T= 'Entrez une donnee : '):
     S =  raw_input(T)
     return S
@@ -79,8 +89,4 @@ def interface_cryptage():
     print("--------------DE-CHIFFREMENT---------------------")
     print("Phrase: "+xDec)
    
-#x = 'CHIFFRE DE VIGENERE'
-#c = "BACHELIER"
-#x = del_space(to_miniscule(x)) 
-#c = del_space(to_miniscule(c))
 #interface_cryptage()
